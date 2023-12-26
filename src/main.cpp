@@ -95,19 +95,24 @@ int main(int argc, char** argv)
     end_time = high_resolution_clock::now();
     MyTimeOutput("SEF处理时间: ", start_time, end_time);
 
-    cv::imshow("src", src);
-    cv::imshow("AINDANE_dst", AINDANE_dst);
-    cv::imshow("WTHE_dst", WTHE_dst);
-    cv::imshow("GCEHistMod_dst", GCEHistMod_dst);
-    cv::imshow("LDR_dst", LDR_dst);
-    cv::imshow("AGCWD_dst", AGCWD_dst);
-    cv::imshow("AGCIE_dst", AGCIE_dst);
-    cv::imshow("IAGCWD_dst", IAGCWD_dst);
-    cv::imshow("Ying_dst", Ying_dst);
-    cv::imshow("CEusingLuminanceAdaptation_dst", CEusingLuminanceAdaptation_dst);
-    cv::imshow("adaptiveImageEnhancement_dst", adaptiveImageEnhancement_dst);
-    cv::imshow("JHE_dst", JHE_dst);
-    cv::imshow("SEF_dst", SEF_dst);
+    // cv::namedWindow("src", cv::WINDOW_NORMAL);  // WINDOW_NORMAL allows for resizing
+    cv::Mat image(300, 300, CV_8UC3, cv::Scalar(0, 0, 0));
+
+    // Display the created image (optional)
+    cv::imshow("My Image", image);
+    // cv::imshow("src", src);
+    // cv::imshow("AINDANE_dst", AINDANE_dst);
+    // cv::imshow("WTHE_dst", WTHE_dst);
+    // cv::imshow("GCEHistMod_dst", GCEHistMod_dst);
+    // cv::imshow("LDR_dst", LDR_dst);
+    // cv::imshow("AGCWD_dst", AGCWD_dst);
+    // cv::imshow("AGCIE_dst", AGCIE_dst);
+    // cv::imshow("IAGCWD_dst", IAGCWD_dst);
+    // cv::imshow("Ying_dst", Ying_dst);
+    // cv::imshow("CEusingLuminanceAdaptation_dst", CEusingLuminanceAdaptation_dst);
+    // cv::imshow("adaptiveImageEnhancement_dst", adaptiveImageEnhancement_dst);
+    // cv::imshow("JHE_dst", JHE_dst);
+    // cv::imshow("SEF_dst", SEF_dst);
 	
     cv::waitKey();
     return 0;

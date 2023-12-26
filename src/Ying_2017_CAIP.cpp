@@ -28,7 +28,7 @@ void Ying_2017_CAIP(const cv::Mat& src, cv::Mat& dst, double mu, double a, doubl
     L.convertTo(normalized_L, CV_64F, 1 / 255.0);
 
     cv::Mat normalized_half_L;
-    resize(normalized_L, normalized_half_L, cv::Size(), 0.5, 0.5, cv::INTER_CUBIC);
+    cv::resize(normalized_L, normalized_half_L, cv::Size(), 0.5, 0.5, cv::INTER_CUBIC);
 
     // start_time = clock();
     cv::Mat M_h, M_v;
@@ -128,7 +128,7 @@ void Ying_2017_CAIP(const cv::Mat& src, cv::Mat& dst, double mu, double a, doubl
         cv::Mat normalized_half_T(c, r, CV_64F, t.memptr());
         normalized_half_T = normalized_half_T.t();
 
-        resize(normalized_half_T, normalized_T, src.size(), 0, 0, CV_INTER_CUBIC);
+        cv::resize(normalized_half_T, normalized_T, src.size(), 0, 0, cv::INTER_CUBIC);
 
         // end_time = clock();
         // MyTimeOutput("Ax=b处理时间: ", start_time, end_time);
@@ -144,7 +144,7 @@ void Ying_2017_CAIP(const cv::Mat& src, cv::Mat& dst, double mu, double a, doubl
 
         cv::Mat isBad = normalized_T < 0.5;
         cv::Mat isBad_50x50;
-        cv::resize(isBad, isBad_50x50, cv::Size(50, 50), 0, 0, CV_INTER_NN);
+        cv::resize(isBad, isBad_50x50, cv::Size(50, 50), 0, 0, cv::INTER_CUBIC);
 
         int count = countNonZero(isBad_50x50);
         if (count == 0) {
@@ -153,7 +153,7 @@ void Ying_2017_CAIP(const cv::Mat& src, cv::Mat& dst, double mu, double a, doubl
             isBad_50x50.convertTo(isBad_50x50, CV_64F, 1.0 / 255);
 
             cv::Mat normalized_src_50x50;
-            cv::resize(normalized_src, normalized_src_50x50, cv::Size(50, 50), 0, 0, CV_INTER_CUBIC);
+            cv::resize(normalized_src, normalized_src_50x50, cv::Size(50, 50), 0, 0, cv::INTER_CUBIC);
             normalized_src_50x50 = cv::max(normalized_src_50x50, 0);
             cv::Mat Y;
             {

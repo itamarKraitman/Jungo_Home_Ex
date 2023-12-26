@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.2)
 
 project(image_contrast_enhancement)
 
 set(CMAKE_CXX_STANDARD 11)
 
-find_package(OpenCV 3 REQUIRED)
+# find_package(OpenCV 3 REQUIRED)
+find_package(OpenCV 4 REQUIRED)
 find_package(dlib REQUIRED)
 find_package(Armadillo REQUIRED)
 include_directories(

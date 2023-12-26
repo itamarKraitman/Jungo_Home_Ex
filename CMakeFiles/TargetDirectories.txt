@@ -1,0 +1,3 @@
+/mnt/c/Users/itama/OneDrive/Desktop/Home Ex Jungo/Image-Contrast-Enhancement/CMakeFiles/main.dir
+/mnt/c/Users/itama/OneDrive/Desktop/Home Ex Jungo/Image-Contrast-Enhancement/CMakeFiles/edit_cache.dir
+/mnt/c/Users/itama/OneDrive/Desktop/Home Ex Jungo/Image-Contrast-Enhancement/CMakeFiles/rebuild_cache.dir
