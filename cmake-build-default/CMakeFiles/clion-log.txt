@@ -1,0 +1,4 @@
+Cannot generate into C:\Users\itama\CLionProjects\Image-Contrast-Enhancement
+It is already used for project \mnt\c\Users\itama\CLionProjects\Image-Contrast-Enhancement
+
+Please either delete it manually or select another generation directory
